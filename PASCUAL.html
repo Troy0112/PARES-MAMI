@@ -9,14 +9,13 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('/mnt/data/00aea2b9-6d4a-41da-a32c-53eb580a81de.png') no-repeat center center fixed; /* Background image */
+            background: url('/mnt/data/00aea2b9-6d4a-41da-a32c-53eb580a81de.png') no-repeat center center fixed;
             background-size: cover;
             color: #333;
             position: relative;
             height: 100vh;
         }
 
-        /* Header and Navigation */
         header {
             background-color: rgba(0, 0, 0, 0.5);
             color: #fff;
@@ -36,7 +35,6 @@
             margin-top: 10px;
         }
 
-        /* Navigation Bar */
         nav {
             background: #1976D2;
             padding: 1rem;
@@ -56,7 +54,6 @@
             text-decoration: underline;
         }
 
-        /* Content Sections */
         .content-section {
             display: none;
             padding: 40px;
@@ -82,7 +79,6 @@
             line-height: 1.6;
         }
 
-        /* Dish Card Styling */
         .dish-card {
             display: flex;
             margin-bottom: 20px;
@@ -112,7 +108,6 @@
             font-size: 1.1rem;
         }
 
-        /* Gallery */
         .gallery {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -131,7 +126,6 @@
             transform: scale(1.05);
         }
 
-        /* Form Styling */
         input, textarea, button {
             margin: 10px 0;
             padding: 12px;
@@ -152,7 +146,6 @@
             background-color: #1565C0;
         }
 
-        /* Footer */
         footer {
             background-color: #333;
             color: #fff;
@@ -167,26 +160,28 @@
 </head>
 <body>
 
-<!-- Header -->
 <header>
     <h1>Pares Mami</h1>
     <p>Discover the best Pares and Mami in town!</p>
 </header>
 
-<!-- Navigation Bar -->
 <nav>
     <a href="javascript:void(0);" onclick="showContent('home')">Home</a>
     <a href="javascript:void(0);" onclick="showContent('aboutus')">About Us</a>
     <a href="javascript:void(0);" onclick="showContent('menu')">Menu</a>
+    <a href="javascript:void(0);" onclick="showContent('gallery')">Image Gallery</a>
     <a href="javascript:void(0);" onclick="showContent('contact')">Contact</a>
 </nav>
 
-<!-- Home Content Section -->
 <div id="home" class="content-section active">
     <h2>Welcome to Pares Mami!</h2>
     <p>We offer the best Pares and Mami in town. Our dishes are made with love and the freshest ingredients. Come experience the authentic Filipino flavors!</p>
+</div>
 
-    <!-- Mission and History -->
+<div id="aboutus" class="content-section">
+    <h2>About Us</h2>
+    <p>At Pares Mami, we are passionate about bringing the authentic Filipino flavors to your table. Our mission is to share the joy of Pares and Mami with everyone. Founded in 2025, Pares Mami has quickly become a favorite among locals who crave comfort food done right.</p>
+
     <div>
         <h3>Our Mission</h3>
         <p>Our mission is to bring the best Filipino comfort food to everyone. Pares Mami aims to create an unforgettable dining experience with every dish we serve, showcasing authentic Pares and Mami recipes.</p>
@@ -198,18 +193,10 @@
     </div>
 </div>
 
-<!-- About Us Section -->
-<div id="aboutus" class="content-section">
-    <h2>About Us</h2>
-    <p>At Pares Mami, we are passionate about bringing the authentic Filipino flavors to your table. Our mission is to share the joy of Pares and Mami with everyone. Founded in 2025, Pares Mami has quickly become a favorite among locals who crave comfort food done right.</p>
-</div>
-
-<!-- Menu Section -->
 <div id="menu" class="content-section">
-    <h2>Our Menu</h2>
+    <h2>About Us</h2>
     <p>Explore our variety of mouthwatering dishes! We offer the best Pares and Mami in different variations to suit your taste:</p>
 
-    <!-- Pares and Mami Dishes -->
     <div class="dish-card">
         <img src="pares.jpg" alt="Pares">
         <div>
@@ -231,20 +218,30 @@
             <p>Enjoy both Pares and Mami in one dish!</p>
         </div>
     </div>
+</div>
 
-    <!-- Food Gallery -->
-    <h3>Gallery</h3>
+<div id="gallery" class="content-section">
+    <h2>Image Gallery</h2>
+    <p>Browse our collection of mouthwatering dishes and discover the visual appeal of Pares Mami!</p>
+
     <div class="gallery">
-        <img src="image1.jpg" alt="Dish 1">
-        <img src="image2.jpg" alt="Dish 2">
-        <img src="image3.jpg" alt="Dish 3">
-        <img src="image4.jpg" alt="Dish 4">
+        <img src="image1.jpg" alt="Gallery Image 1">
+        <img src="image2.jpg" alt="Gallery Image 2">
+        <img src="image3.jpg" alt="Gallery Image 3">
+        <img src="image4.jpg" alt="Gallery Image 4">
     </div>
 </div>
 
-<!-- Contact Us Section -->
 <div id="contact" class="content-section">
     <h2>Contact Us</h2>
+    <p>We would love to hear from you! If you have any questions, comments, or inquiries, feel free to reach out to us.</p>
+
+    <h3>Contact Information</h3>
+    <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+    <p><strong>Email:</strong> <a href="mailto:support@paresmami.com">support@paresmami.com</a></p>
+    <p><strong>Visit Us:</strong> 123 Pares Street, Flavor Town, Philippines</p>
+
+    <h3>Send Us a Message</h3>
     <form>
         <input type="text" placeholder="Your Name" required><br>
         <input type="email" placeholder="Your Email" required><br>
@@ -253,24 +250,31 @@
     </form>
 </div>
 
-<!-- Footer Section -->
 <footer>
     <p>&copy; 2025 Pares Mami. All rights reserved.</p>
 </footer>
 
 <script>
     function showContent(sectionId) {
-        // Hide all sections
         var sections = document.querySelectorAll('.content-section');
         sections.forEach(function(section) {
             section.classList.remove('active');
         });
         
-        // Show the selected section
         var selectedSection = document.getElementById(sectionId);
         selectedSection.classList.add('active');
     }
 </script>
+<Title>
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+     alert("Welcome to my website!");
+
+    });
+
+   </script>
 
 </body>
 </html>
